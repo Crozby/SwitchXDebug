@@ -3,9 +3,9 @@ debug_text = '\n\nzend_extension="php_xdebug-2.7.1-7.2-vc15-x86_64.dll"\n\n' + \
 
 
 if __name__ == '__main__':
-    php_ini = open("php.ini", "r")
-    text = php_ini.read()
-    php_ini.close()
+    with open("php.ini", "r") as php_ini:
+        text = php_ini.read()
+
     if text[-28:] == "\nxdebug.remote_autostart = 1":
         text = text.replace(debug_text, "")
         flag = "Off"
@@ -13,6 +13,7 @@ if __name__ == '__main__':
         text += debug_text
         flag = "On"
 
-    php_ini = open("php.ini", "w")
-    php_ini.write(text)
+    with open("php.ini", "w") as php_ini:
+        php_ini.write(text)
+
     print("XDebug is " + flag + " now!")
