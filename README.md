@@ -1,7 +1,8 @@
-#XDebug switch
-If there is no the following XDebug settings strings in the php.ini:
+# XDebug switch
+Change XDebug settings strings status in the php.ini.
+If it is commented then uncomment it or vice versa otherwise.
 
-
+Example:
 ```
 zend_extension="php_xdebug-2.7.1-7.2-vc15-x86_64.dll
 
@@ -9,5 +10,14 @@ zend_extension="php_xdebug-2.7.1-7.2-vc15-x86_64.dll
 xdebug.remote_enable = 1
 xdebug.remote_autostart = 1
 ```
-then add it, remove otherwise.
+&uarr; &darr;
+```
+; zend_extension="php_xdebug-2.7.1-7.2-vc15-x86_64.dll
+
+; [XDebug]
+; xdebug.remote_enable = 1
+; xdebug.remote_autostart = 1
+```
+
+
 
